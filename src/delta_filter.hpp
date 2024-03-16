@@ -33,7 +33,7 @@ std::vector<int> delta_Decode(std::pair<int, std::vector<int> > &encode) {
     std::vector<int> decode = {encode.first};
 
     std::vector<int> encode_vec = encode.second;
-    for(int i = 0; i < encode_vec.size(); i++) {
+    for (int i = 0; i < encode_vec.size(); i++) {
         decode.push_back(decode.back() + encode_vec[i]);
     }
 
