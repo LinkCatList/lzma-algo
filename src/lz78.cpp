@@ -1,6 +1,14 @@
 #include <iostream>
 #include "lz78.hpp"
 
+template <typename T>
+std::ostream &operator <<(std::ostream &stream, const std::vector<T> &v){
+    for (const auto &i : v){
+        stream << i << " ";
+    }
+    return stream;
+}
+
 int main() {
 
     std::vector<std::string> s = {"a", "b", "a", "c", "a", "b", "a"};
@@ -11,7 +19,7 @@ int main() {
         std::cout << std::get<0>(i) << " " << std::get<1>(i) << "\n"; 
     }
 
-    std::string decode = lz78_Decode(encode);
+    std::vector<std::string> decode = lz78_Decode(encode);
     std::cout << decode << "\n";
 
     return 0;

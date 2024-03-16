@@ -6,7 +6,7 @@ int main() {
 
     int n;
     std::cin >> n;
-    std::vector<char> input(n);
+    std::vector<std::string> input(n);
     
     for(int i = 0; i < n; i++) {
         std::cin >> input[i];
@@ -14,7 +14,7 @@ int main() {
 
     auto Encode_delta_filter = delta_filter(input);
 
-    // std::cout << Encode_delta_filter << "\n";
+    std::cout << Encode_delta_filter << "\n";
 
     auto Encode_lz78 = lz78_Encode(Encode_delta_filter);
 
