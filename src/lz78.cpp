@@ -3,13 +3,16 @@
 
 int main() {
 
-    std::string s;
-    std::cin >> s;
+    std::vector<std::string> s = {"a", "b", "a", "c", "a", "b", "a"};
 
-    auto ans = lz78(s);
+    auto encode = lz78_Encode(s);
 
-    for (auto &i: ans) {
+    for (auto &i: encode) {
         std::cout << std::get<0>(i) << " " << std::get<1>(i) << "\n"; 
     }
+
+    std::string decode = lz78_Decode(encode);
+    std::cout << decode << "\n";
+
     return 0;
 }

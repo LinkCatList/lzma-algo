@@ -5,7 +5,7 @@
 int main(){
     int n;
     std::cin >> n;
-    std::vector<int> v(n);
+    std::vector<char> v(n);
 
     for (int i = 0; i < n; i++) {
         std::cin >> v[i];
@@ -13,7 +13,7 @@ int main(){
 
     auto encode = delta_filter(v);
 
-    std::cout << encode.second << "\n";
+    std::cout << encode << "\n";
     std::cout << delta_Decode(encode) << "\n";
 
     return 0;

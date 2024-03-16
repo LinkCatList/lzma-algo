@@ -9,32 +9,32 @@ std::ostream &operator <<(std::ostream &stream, const std::vector<T> &v){
     return stream;
 }
 
-std::pair<char, std::vector<int> > delta_filter(std::vector<char> &input) {
-    std::vector<int> code_input;
+std::vector<std::string> delta_filter(std::vector<char> &input) {
+    std::vector<std::string> code_input;
 
     for (int i = 1; i < input.size(); i++) {
-        code_input.push_back((input[i] - '0') - (input[i - 1] - '0'));
+        code_input.push_back(std::to_string((input[i] - '0') - (input[i - 1] - '0')));
     }
 
-    return {input[0], code_input};
+    return code_input;
 }
 
-std::pair<int, std::vector<int> > delta_filter(std::vector<int> &input) {
-    std::vector<int> code_input;
+// std::pair<int, std::vector<int> > delta_filter(std::vector<int> &input) {
+//     std::vector<int> code_input;
 
-    for (int i = 1; i < input.size(); i++) {
-        code_input.push_back(input[i] - input[i - 1]);
-    }
+//     for (int i = 1; i < input.size(); i++) {
+//         code_input.push_back(input[i] - input[i - 1]);
+//     }
 
-    return {input[0], code_input};
-}
+//     return {input[0], code_input};
+// }
 
-std::vector<int> delta_Decode(std::pair<int, std::vector<int> > &encode) {
-    std::vector<int> decode = {encode.first};
+std::vector<std::string> delta_Decode(std::vector<std::string>  &encode) {
+    std::vector<std::string> decode = {encode[0]};
 
-    std::vector<int> encode_vec = encode.second;
+    std::vector<std::string> encode_vec = encode;
     for (int i = 0; i < encode_vec.size(); i++) {
-        decode.push_back(decode.back() + encode_vec[i]);
+        decode.push_back(std::to_string(std::stoi(decode.back()) + std::stoi(encode_vec[i])));
     }
 
     return decode;
