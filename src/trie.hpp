@@ -41,7 +41,7 @@ int has(const std::string &s) {
     bool was_terminal = false;
     for (int i = 0; i < s.size(); i++) {
         char c = s[i];
-        std::cout << c << "\n";
+        // std::cout << c << "\n";
         was_terminal |= cur_v -> is_terminal;
         cur_v = cur_v -> next[c - '0'];
 

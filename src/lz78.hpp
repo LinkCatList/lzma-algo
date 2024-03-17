@@ -49,7 +49,8 @@ std::vector<std::string> lz78_Decode(std::vector<std::tuple<int, std::string> > 
     std::vector<std::string> ans;
     for (auto &i: words) {
         for (auto &c: i){
-            ans.push_back(std::to_string(c - '0'));
+            std::string tmp = {c};
+            ans.push_back(tmp);
         }
     }
 
