@@ -13,8 +13,11 @@ int main(){
 
     auto encode = delta_filter(v);
 
+    std::cout << "ENCODE:\n";
     std::cout << encode << "\n";
-    // std::cout << delta_Decode(encode) << "\n";
+
+    std::cout << "DECODE:\n";
+    std::cout << delta_Decode(encode) << "\n";
 
     return 0;
 }
