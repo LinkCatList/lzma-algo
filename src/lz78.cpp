@@ -11,7 +11,7 @@ std::ostream &operator <<(std::ostream &stream, const std::vector<T> &v){
 
 int main() {
 
-    std::vector<std::string> s = {"1", "2", "a", "c", "a", "b", "a"};
+    std::vector<std::string> s = {"22", "1", "a", "c", "a", "b", "a"};
 
     auto encode = lz78_Encode(s);
 

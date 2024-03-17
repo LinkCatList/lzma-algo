@@ -14,7 +14,7 @@ int main(){
     auto encode = delta_filter(v);
 
     std::cout << encode << "\n";
-    std::cout << delta_Decode(encode) << "\n";
+    // std::cout << delta_Decode(encode) << "\n";
 
     return 0;
 }
