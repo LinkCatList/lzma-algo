@@ -25,7 +25,7 @@ std::vector<std::tuple<int, std::string> > lz78_Encode(std::vector<std::string> 
         }
     }
     if (prev != -1) {
-        ans.push_back({0, input.back()});
+        ans.push_back({0, s});
     }  
     return ans;
 }
